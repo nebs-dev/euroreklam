@@ -14,11 +14,10 @@ require('laravel-elixir-vue-2');
  */
 
 elixir((mix) => {
-    //mix.sass('app.scss')
-    //.webpack('app.js')
+    mix.sass('app.scss')
+    .webpack('app.js')
 
-
-    mix.scripts([
+    .scripts([
         'backend/theme/jquery.min.js',
         'backend/theme/bootstrap.min.js',
         'backend/theme/jquery.dataTables.min.js',
@@ -28,19 +27,19 @@ elixir((mix) => {
         'backend/theme/custom.min.js'
     ], './public/js/backend/theme.js')
 
-    mix.scripts([
+    .scripts([
         'backend/libs/*.js'
     ], './public/js/backend/libs.js')
 
-    mix.styles([
+    .styles([
         'backend/theme/*.css'
     ], './public/css/backend/theme.css')
 
-    mix.styles([
+    .styles([
         'backend/libs/*.css'
     ], './public/css/backend/libs.css')
 
-    mix.styles([
+    .styles([
         'backend/fonts/*.css'
     ], './public/css/backend/font-awesome/font-awesome.css')
 

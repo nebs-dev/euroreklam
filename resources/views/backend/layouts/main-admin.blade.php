@@ -10,6 +10,7 @@
 
     <title>Euroreklam Admin</title>
 
+    <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/backend/theme.css">
     <link rel="stylesheet" href="/css/backend/libs.css">
     <link rel="stylesheet" href="/css/backend/font-awesome/font-awesome.css">
