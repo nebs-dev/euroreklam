@@ -17,6 +17,33 @@ class CreateCategoriesTable extends Migration {
             $table->string('title')->unique();
             $table->timestamps();
         });
+
+        // Insert data
+        DB::table('categories')->insert(array(
+            'title' => 'Samsung',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ));
+        DB::table('categories')->insert(array(
+            'title' => 'Midea',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ));
+        DB::table('categories')->insert(array(
+            'title' => 'LG',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ));
+        DB::table('categories')->insert(array(
+            'title' => 'Toshiba',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ));
+        DB::table('categories')->insert(array(
+            'title' => 'Korel',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ));
     }
 
     /**

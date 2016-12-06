@@ -19,8 +19,9 @@ class CreateItemsTable extends Migration {
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
             $table->string('naziv')->unique();
-            $table->float('cijena_pdv');
-            $table->float('cijena_popust')->nullable();
+            $table->string('slika');
+            $table->double('cijena_pdv', 16, 6);
+            $table->double('cijena_popust', 16, 6)->nullable();
             $table->text('opis');
             $table->string('en_klasa');
             $table->string('kapacitet_hladjenja');
@@ -46,8 +47,8 @@ class CreateItemsTable extends Migration {
             $table->string('protog_zraka_vanjska')->nullable();
             $table->string('raspolozivi_pad_tlaka')->nullable();
             $table->string('jamstvo');
-            $table->float('seer')->nullable();
-            $table->float('scop')->nullable();
+            $table->double('seer', 16, 6)->nullable();
+            $table->double('scop', 16, 6)->nullable();
             $table->timestamps();
         });
     }
