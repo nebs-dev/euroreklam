@@ -69,6 +69,10 @@ table.dataTable{clear:both;margin-top:6px !important;margin-bottom:6px !importan
         background-size: 176px 22px;
     }
 }
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+}
 /* Make clicks pass-through */
 #nprogress {
   pointer-events: none;

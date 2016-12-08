@@ -18,7 +18,9 @@ class ItemRepository {
         return Item::with('category')->paginate(10);
     }
 
+
     /**
+     * @param $params
      * @return LengthAwarePaginator
      */
     public function search($params) {
@@ -28,9 +30,14 @@ class ItemRepository {
 
         # Title
         if (isset($params['title'])) {
-            $sql .= "WHERE item.naziv LIKE :title OR cat.title LIKE :cat_title";
+            $sql .= "WHERE item.naziv LIKE :title OR cat.title LIKE :cat_title ";
             $sqlParams['title'] = '%'.$params['title'].'%';
             $sqlParams['cat_title'] = '%'.$params['title'].'%';
+        }
+
+        # Price sort
+        if (isset($params['price_pdv'])) {
+            $sql .= "ORDER BY item.cijena_pdv " . $params['price_pdv'];
         }
 
         $items = DB::select($sql, $sqlParams);

@@ -28,24 +28,29 @@
 <div class="container body">
     <div class="main_container">
         @if (Auth::check())
-            @include('backend.partials.sidebar')
-            @include('backend.partials.navbar')
+        @include('backend.partials.sidebar')
+        @include('backend.partials.navbar')
         @else
-            @include('backend.partials.sidebar_guest')
-            @include('backend.partials.navbar_guest')
+        @include('backend.partials.sidebar_guest')
+        @include('backend.partials.navbar_guest')
         @endif
 
-        @if ($errors->any())
-            <div class="row">
-                <div class='flash alert-danger'>
-                    @foreach ( $errors->all() as $error )
-                        <p>{{ $error }}</p>
-                    @endforeach
+        <!-- page content -->
+        <div class="right_col" role="main">
+            @if ($errors->any())
+                <div class="row">
+                    <div class='flash alert-danger'>
+                        @foreach ( $errors->all() as $error )
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
                 </div>
-            </div>
-        @endif
+            @endif
 
-        @yield('content')
+            @yield('content')
+        </div>
+        <!-- /page content -->
+
 
         @include('backend.partials.footer')
     </div>
@@ -54,6 +59,6 @@
 <script type="text/javascript" src="/js/backend/theme.js"></script>
 <script type="text/javascript" src="/js/backend/libs.js"></script>
 @yield('js')
-{{--@include('flash')--}}
+@include('flash')
 </body>
 </html>

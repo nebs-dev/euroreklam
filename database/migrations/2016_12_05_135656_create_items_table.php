@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration {
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
             $table->string('naziv')->unique();
-            $table->string('slika');
+            $table->string('slika')->nullable();
             $table->double('cijena_pdv', 16, 6);
             $table->double('cijena_popust', 16, 6)->nullable();
             $table->text('opis');
@@ -43,10 +43,10 @@ class CreateItemsTable extends Migration {
             $table->string('promjer_cijevi_plinska');
             $table->integer('max_duljina_cjevovoda')->nullable();
             $table->integer('max_visinska_razlika')->nullable();
-            $table->string('protog_zraka_unutarnja')->nullable();
-            $table->string('protog_zraka_vanjska')->nullable();
+            $table->string('protok_zraka_unutarnja')->nullable();
+            $table->string('protok_zraka_vanjska')->nullable();
             $table->string('raspolozivi_pad_tlaka')->nullable();
-            $table->string('jamstvo');
+            $table->integer('jamstvo');
             $table->double('seer', 16, 6)->nullable();
             $table->double('scop', 16, 6)->nullable();
             $table->timestamps();

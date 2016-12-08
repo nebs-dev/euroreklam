@@ -2,8 +2,6 @@
 
 @section('content')
 
-        <!-- page content -->
-<div class="right_col" role="main">
     <div class="">
         <div class="page-title">
             <div class="title_left">
@@ -28,6 +26,14 @@
 
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
+
+                @foreach(app('request')->input() as $param => $value)
+                    @if($param != 'page')
+                        <button id="{{$param}}" type="button"
+                                class="btn btn-primary btn-xs removeTag">{{ $value }}</button>
+                    @endif
+                @endforeach
+
                 <div class="x_panel">
                     <div class="x_title">
                         {{--<h2>Plain Page</h2>--}}
@@ -70,7 +76,7 @@
                                                     aria-label=""
                                                     style="width: 240px;">Photo
                                                 </th>
-                                                <th class="sorting_asc" tabindex="0"
+                                                <th class="sorting" tabindex="0"
                                                     aria-controls="datatable-checkbox" rowspan="1" colspan="1"
                                                     aria-sort="ascending"
                                                     aria-label="Name: activate to sort column descending"
@@ -81,15 +87,15 @@
                                                     aria-label="Position: activate to sort column ascending"
                                                     style="width: 386px;">Category
                                                 </th>
-                                                <th class="sorting" tabindex="0"
+                                                <th id="price_pdv" class="sorting" tabindex="0"
                                                     aria-controls="datatable-checkbox" rowspan="1" colspan="1"
                                                     aria-label="Office: activate to sort column ascending"
-                                                    style="width: 184px;">Price
+                                                    style="width: 184px;">Price PDV
                                                 </th>
                                                 <th class="sorting" tabindex="0"
                                                     aria-controls="datatable-checkbox" rowspan="1" colspan="1"
                                                     aria-label="Age: activate to sort column ascending"
-                                                    style="width: 102px;">Price PDV
+                                                    style="width: 102px;">Price Discount
                                                 </th>
                                                 <th class="sorting" tabindex="0"
                                                     aria-controls="datatable-checkbox" rowspan="1" colspan="1"
@@ -111,7 +117,13 @@
                                                     <td>{{ $item->category->title }}</td>
                                                     <td>{{ $item->cijena_pdv }}</td>
                                                     <td>{{ $item->cijena_popust }}</td>
-                                                    <td></td>
+                                                    <td>
+                                                        <a href="{{ route('admin_items_show', $item->id) }}" type="button"
+                                                           class="btn btn-primary btn-outline btn-xs">Info</a>
+                                                        <a href="{{ route('admin_items_edit', $item->id) }}" type="button"
+                                                           class="btn btn-success btn-outline btn-xs">Edit</a>
+                                                        {!! link_to('Delete', "/items/{$item->id}", 'DELETE') !!}
+                                                    </td>
                                                 </tr>
                                             @endforeach
 
@@ -123,47 +135,12 @@
                                 <div class="row">
                                     <div class="col-sm-5">
                                         <div class="dataTables_info" id="datatable-checkbox_info" role="status"
-                                             aria-live="polite">Showing 1 to 10 of 57 entries
+                                             aria-live="polite">{{  table_results_num($items) }}
                                         </div>
                                     </div>
                                     <div class="col-sm-7">
                                         <div class="dataTables_paginate paging_simple_numbers"
                                              id="datatable-checkbox_paginate">
-                                            {{--<ul class="pagination">--}}
-                                            {{--<li class="paginate_button previous disabled"--}}
-                                            {{--id="datatable-checkbox_previous"><a href="#"--}}
-                                            {{--aria-controls="datatable-checkbox"--}}
-                                            {{--data-dt-idx="0"--}}
-                                            {{--tabindex="0">Previous</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="paginate_button active"><a href="#"--}}
-                                            {{--aria-controls="datatable-checkbox"--}}
-                                            {{--data-dt-idx="1"--}}
-                                            {{--tabindex="0">1</a></li>--}}
-                                            {{--<li class="paginate_button "><a href="#"--}}
-                                            {{--aria-controls="datatable-checkbox"--}}
-                                            {{--data-dt-idx="2"--}}
-                                            {{--tabindex="0">2</a></li>--}}
-                                            {{--<li class="paginate_button "><a href="#"--}}
-                                            {{--aria-controls="datatable-checkbox"--}}
-                                            {{--data-dt-idx="3"--}}
-                                            {{--tabindex="0">3</a></li>--}}
-                                            {{--<li class="paginate_button "><a href="#"--}}
-                                            {{--aria-controls="datatable-checkbox"--}}
-                                            {{--data-dt-idx="4"--}}
-                                            {{--tabindex="0">4</a></li>--}}
-                                            {{--<li class="paginate_button "><a href="#"--}}
-                                            {{--aria-controls="datatable-checkbox"--}}
-                                            {{--data-dt-idx="5"--}}
-                                            {{--tabindex="0">5</a></li>--}}
-                                            {{--<li class="paginate_button "><a href="#"--}}
-                                            {{--aria-controls="datatable-checkbox"--}}
-                                            {{--data-dt-idx="6"--}}
-                                            {{--tabindex="0">6</a></li>--}}
-                                            {{--<li class="paginate_button next" id="datatable-checkbox_next"><a--}}
-                                            {{--href="#" aria-controls="datatable-checkbox"--}}
-                                            {{--data-dt-idx="7" tabindex="0">Next</a></li>--}}
-                                            {{--</ul>--}}
                                             {!! $items->appends('item')->render() !!}
                                         </div>
                                     </div>
@@ -175,8 +152,47 @@
             </div>
         </div>
     </div>
-</div>
-</div>
-<!-- /page content -->
+@stop
 
+@section('js')
+    <script>
+        $(document).ready(function () {
+            {{--$('.dataTable').DataTable({--}}
+            {{--responsive: true--}}
+            {{--});--}}
+
+            $('.removeTag').on('click', function () {
+                url = removeURLParameter(window.location.href, $(this).attr("id"));
+                window.location.href = url;
+            });
+
+            $('.sorting').on('click', function () {
+                param = $(this).attr("id");
+            });
+        });
+
+
+        function removeURLParameter(url, parameter) {
+            //prefer to use l.search if you have a location/link object
+            var urlparts = url.split('?');
+            if (urlparts.length >= 2) {
+
+                var prefix = encodeURIComponent(parameter) + '=';
+                var pars = urlparts[1].split(/[&;]/g);
+
+                //reverse iteration as may be destructive
+                for (var i = pars.length; i-- > 0;) {
+                    //idiom for string.startsWith
+                    if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+                        pars.splice(i, 1);
+                    }
+                }
+
+                url = urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : "");
+                return url;
+            } else {
+                return url;
+            }
+        }
+    </script>
 @stop
