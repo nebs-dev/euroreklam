@@ -58,6 +58,17 @@ class ItemRepository {
         return $items;
     }
 
+    /**
+     * @param bool|false $random
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|static[]
+     */
+    public function getDiscountItems($random = false) {
+        $query = Item::with('category')->whereNotNull('cijena_popust');
+
+        if ($random) $query = $query->inRandomOrder();
+
+        return $query->get();
+    }
 
     /**
      * @param $item

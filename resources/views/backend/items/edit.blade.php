@@ -5,7 +5,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Edit {{ $item->name }}</h3>
+                <h3>Edit {{ $item->naziv }}</h3>
             </div>
         </div>
 
@@ -26,7 +26,11 @@
 
                             <input type="hidden" name="_method" value="PUT"/>
 
-                            <img src="{{ asset($item->slika) }}" width="200" >
+                            @if (file_exists(public_path($item->slika)) && $item->slika != null)
+                                <img src="{{ asset($item->slika) }}" width="200">
+                            @else
+                                <img src="{{ asset('images/visa.png') }}" width="100">
+                            @endif
 
                             <div class="form-group">
                                 <label>Slika</label>

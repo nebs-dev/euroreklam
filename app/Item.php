@@ -4,6 +4,7 @@ namespace App;
 
 use App\Http\Requests\ItemRequest;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use League\Flysystem\Exception;
 
 class Item extends Model {
@@ -50,5 +51,24 @@ class Item extends Model {
         return $this->belongsTo('App\Category', 'category_id');
     }
 
+    /**
+     * @return mixed
+     */
+    public function getImagePath() {
+        return str_replace('storage/', '', $this->slika);
+    }
+
+
+    /**
+     * @throws \Exception
+     */
+    public function delete() {
+        $file = $this->getImagePath();
+        if (Storage::exists($file)) {
+            Storage::delete($file);
+        }
+
+        parent::delete();
+    }
 
 }

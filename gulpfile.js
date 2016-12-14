@@ -15,7 +15,7 @@ require('laravel-elixir-vue-2');
 
 elixir((mix) => {
     mix.sass('app.scss')
-    .webpack('app.js')
+    .webpack('frontend/app.js', './public/js/frontend/frontend_app.js')
 
     .scripts([
         'backend/theme/jquery.min.js',

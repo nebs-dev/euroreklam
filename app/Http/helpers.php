@@ -15,6 +15,20 @@ function flash($title = null, $message = null) {
     return $flash->info($title, $message);
 }
 
+function delete_link($path, $class = null, $form_class = null) {
+    $csrf = csrf_field();
+
+    return <<<EOT
+
+<form method="POST" action="{$path}" class="form-inline {$form_class}">
+    $csrf
+    <input type="hidden" name="_method" value="DELETE">
+    <button class="btn btn-danger {$class}" type="submit">Delete</button>
+</form>
+
+EOT;
+}
+
 /**
  * @param $body
  * @param $path
