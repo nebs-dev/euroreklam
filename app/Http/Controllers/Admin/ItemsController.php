@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\Http\Controllers\Controller;
 use App\Http\FileUploader;
 use App\Http\Requests\ItemRequest;
 use App\Item;
 use App\Repositories\ItemRepository;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\DB;
 
 class ItemsController extends Controller {
 
@@ -22,7 +21,7 @@ class ItemsController extends Controller {
 
     public function index(Request $request) {
         $params = $request->all();
-        $items = $this->itemRepo->search($params);
+        $items  = $this->itemRepo->search($params);
         return view('backend/items/index', compact('items'));
     }
 
@@ -44,28 +43,18 @@ class ItemsController extends Controller {
     public function store(ItemRequest $request) {
         try {
             $input = array_filter($request->all(), 'strlen');
-            $item = new Item($input);
+            $item  = new Item($input);
             $item->save();
 
             $item = FileUploader::upload($request, $item, 'klime', 'slika');
 
             flash()->success('Success', 'Item successfully created');
-            return redirect()->route('admin_items_show', compact('item'));
+            return redirect()->route('admin_items_list');
 
         } catch (\Exception $e) {
             flash()->error('Error', $e->getMessage());
             return redirect()->back();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param Item $item
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Item $item) {
-        //
     }
 
     /**
@@ -90,14 +79,6 @@ class ItemsController extends Controller {
         $params = array_filter($request->all(), 'strlen');
         $item->update($params);
 
-        if ($request->hasFile('slika')) {
-            $file = $request->file('slika');
-            $ext = $file->guessClientExtension();
-            $path = $file->storeAs('klime', "image_{$item->id}.{$ext}");
-            $item->slika = 'storage/' . $path;
-            $item->save();
-        }
-
         $item = FileUploader::upload($request, $item, 'klime', 'slika');
 
         flash()->success('Success', 'Item successfully updated');
@@ -111,7 +92,16 @@ class ItemsController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Item $item) {
-        //
+        try {
+            $item->delete();
+            flash()->success('Success', 'Item successfully deleted');
+
+        } catch (\Exception $e) {
+            flash()->error('Error', $e->getMessage());
+
+        }
+
+        return redirect()->route('admin_items_list');
     }
 
 }

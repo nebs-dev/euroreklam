@@ -5,7 +5,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Search for item</h3>
+                <h3>Search for item - <a href="{{ route('admin_items_create') }}" class="btn btn-success">Create new</a> </h3>
             </div>
 
             <div class="title_right">
@@ -111,18 +111,19 @@
                                             @foreach($items as $item)
                                                 <tr role="row" class="odd">
                                                     <td>
-                                                        <img src="{{ $item->slika }}" width="100">
+                                                        <img src="{{ asset($item->slika) }}" width="100">
                                                     </td>
                                                     <td class="sorting_1">{{ $item->naziv }}</td>
                                                     <td>{{ $item->category->title }}</td>
                                                     <td>{{ $item->cijena_pdv }}</td>
                                                     <td>{{ $item->cijena_popust }}</td>
                                                     <td>
-                                                        <a href="{{ route('admin_items_show', $item->id) }}" type="button"
-                                                           class="btn btn-primary btn-outline btn-xs">Info</a>
-                                                        <a href="{{ route('admin_items_edit', $item->id) }}" type="button"
-                                                           class="btn btn-success btn-outline btn-xs">Edit</a>
-                                                        {!! link_to('Delete', "/items/{$item->id}", 'DELETE') !!}
+                                                        <div class="input-group">
+                                                            <a href="{{ route('admin_items_edit', $item->id) }}"
+                                                               type="button"
+                                                               class="btn btn-success btn-outline btn-xs">Edit</a>
+                                                            {!! delete_link("/admin/items/{$item->id}", 'btn-outline btn-xs', 'pull-right') !!}
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @endforeach
