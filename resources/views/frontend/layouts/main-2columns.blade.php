@@ -15,19 +15,22 @@
 
 </head>
 <body>
-	<div id="frontend_app">
-		<header class="header">
-			@include('frontend.partials.header')
-		</header>
 
-		<section id="main-content">
-			@yield('content')
-		</section>
-		
-		<footer class="footer">
-			@include('frontend.partials.footer')
-		</footer>
-	</div>	
+	<header class="header">
+		@include('frontend.partials.header')
+	</header>
+
+	<aside class="sidebar">
+		@include('frontend.partials.sidebar')
+	</aside>
+
+	<section id="main-content">
+		@yield('content')
+	</section>
+	
+	<footer class="footer">
+		@include('frontend.partials.footer')
+	</footer>
 
 	<script>
 	window.Laravel = {!! json_encode(['csrfToken' => csrf_token()]) !!};
