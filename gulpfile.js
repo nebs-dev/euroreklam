@@ -40,6 +40,10 @@ elixir((mix) => {
     ], './public/css/backend/libs.css')
 
     .styles([
+        'frontend/web/css/app.css'
+    ], './public/css/frontend/app.css')
+
+    .styles([
         'backend/fonts/*.css'
     ], './public/css/backend/font-awesome/font-awesome.css')
 
