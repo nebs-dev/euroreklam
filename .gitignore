@@ -6,3 +6,4 @@
 Homestead.json
 Homestead.yaml
 .env
+/resources/assets/css/frontend/node_modules/
