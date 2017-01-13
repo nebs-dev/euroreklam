@@ -51,7 +51,7 @@ gulp.task('styles', function (){
 
     return gulp.src('src/css/app.css')
         .pipe(postcss(processors))
-        .pipe(gulp.dest('web/css'));
+        .pipe(gulp.dest('../../../../public/css/frontend'));
 });
 
 // Image compress
@@ -65,7 +65,7 @@ gulp.task('imagemin', function() {
             ],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest('web/images'));
+        .pipe(gulp.dest('../../../../public/css/frontend/images'));
 });
 
 
