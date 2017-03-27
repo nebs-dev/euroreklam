@@ -3,9 +3,9 @@
 		<a href="#"><img src="images/logo_euroreklam.png" ></a>
 	</div>
 	<div class="more-info">
-		<div class="more-info-menu-trigger toggle-menu"><span class="icon-menu"></span>Izbornik Trigger</div>
+		<div class="more-info-menu-trigger toggle-menu"><span class="fa fa-bars"></span></div>
 		<div class="more-info-box">
-			<div class="icon-call"></div>
+			<div class="fa fa-phone"></div>
 			<div class="more-info-box-wrapper">
 				<div class="more-info-box-title">Nazovite odmah!</div>
 				<div class="more-info-box-details"><a href="tel:123456789">123456789</a></div>
