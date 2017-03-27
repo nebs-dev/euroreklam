@@ -1,0 +1,11 @@
+@import "external/_owl.carousel.css"; 
+@import "external/_owl.theme.css"; 
+
+@import "partials/_normalize.css"; 
+@import "partials/_default.css"; 
+@import "partials/_fonts.css";
+@import "partials/_colors.css";
+@import "partials/_base.css";
+@import "partials/_header.css"; 
+@import "partials/_footer.css"; 
+@import "partials/_newsletter.css"; 

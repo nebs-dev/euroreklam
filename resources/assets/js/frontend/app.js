@@ -16,5 +16,7 @@ require('../bootstrap');
 Vue.component('homepage-items', require('./components/HomepageItems.vue'))
 
 const app = new Vue({
-    el: '#frontend_app'
+    el: '#frontend_app',
+    data: {
+    }
 });

@@ -27,7 +27,7 @@
     methods: {
       getHomepageItems() {
         this.$http
-        .get('http://localhost:8000/api/items/random').then((data) => {
+        .get(ApiURL + 'api/items/random').then((data) => {
           this.localItems = data.body
         }, (err) => {
           console.log(err)

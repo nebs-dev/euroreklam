@@ -1,0 +1,96 @@
+.header {
+	clear:  fix;
+	width: 100%;
+	display: block;
+
+	&-wrapper {
+		max-width: 1140px;
+	}
+
+}
+
+.logo { 
+	display: block;
+	max-width: 100%;
+	margin:  0 auto;
+	padding: 16px 0;
+	text-align: center;
+
+	a {
+		display: block; 
+	}
+}
+
+.fa:before {
+	font-size: 24px;
+}
+
+.menu {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	clear: both; 
+
+
+	&-close {
+		color: $color-primary-dark;
+		font-size: 16px;
+		line-height: 24px;
+		display: block;
+		width: 40px;
+		background-color: $color-white;
+		padding: 0.5rem;
+   		text-align: center;
+   		float:  right;
+	}
+ 
+	&-wrapper {
+		position: fixed;
+		width: 100%;
+		background-color: $color-primary-dark;
+		height: 100%;
+		z-index: 100;
+		top: 0;
+		left:  -100%;
+		transition: left 0.2s ease-in-out;
+
+		&.active {
+			left:  0;
+		}
+
+		@media screen and (min-width: $screen_m){
+			position: relative;
+			left: 0;
+		}
+	}
+
+	.menu-item {
+		border-bottom: 2px solid $color-white;
+
+		&:first-child {
+			border-top: 2px solid $color-white;
+		} 
+ 
+		&-url {
+			color: $color-white;
+			text-decoration: none;
+			display: block;
+			padding: 8px 16px;
+			background-color: $color-primary-dark;
+			text-transform: uppercase;
+			font-weight: 700;
+			border-left: 4px solid $color-primary-dark;
+			transition: background-color 0.2s ease-in-out, border-left 0.2s ease-in-out;
+
+			&:hover {
+				background-color: $color-primary;
+				border-left: 4px solid $color-primary;
+			}
+		}
+
+		&.current &-url {
+			border-left: 4px solid $color-primary;
+		}
+	}
+} 
+ 
