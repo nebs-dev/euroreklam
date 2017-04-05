@@ -13,28 +13,33 @@
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	
+	<link rel='dns-prefetch' href='http://use.fontawesome.com/' />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel="stylesheet" href="/css/frontend/frontend.css">
 
 </head>
-<body>
-	<div id="frontend_app">
-		<header class="header">
-			@include('frontend.partials.header')
-		</header>
+<body class="body_filled home page page-id-8 airsupply_body scheme_original top_panel_show top_panel_above sidebar_hide sidebar_outer_hide">
 
-		<section id="main-content">
+	<a id="toc_home" class="sc_anchor" title="Home" data-description="&lt;i&gt;Return to Home&lt;/i&gt; - &lt;br&gt;navigate to home page of the site" data-icon="icon-home" data-separator="yes"></a>
+	<a id="toc_top" class="sc_anchor" title="To Top" data-description="&lt;i&gt;Back to top&lt;/i&gt; - &lt;br&gt;scroll to top of the page" data-icon="icon-double-up" data-url="" data-separator="yes"></a>
+	<div class="body_wrap">
+		<div class="page_wrap">
+			
+			@include('frontend/partials/header')
+			
 			@yield('content')
-		</section>
-		
-		<footer class="footer">
-			@include('frontend.partials.footer')
-		</footer>
-	</div>	
 
-	<script>
-	window.Laravel = {!! json_encode(['csrfToken' => csrf_token()]) !!};
-	</script>
-	<script type="text/javascript" src="/js/frontend/frontend_app.js"></script>
-	@yield('js')
+			@include('frontend/partials/footer')
+			
+		</div>
+		<!-- /.page_wrap -->
+	</div>
+	<!-- /.body_wrap -->
+	<a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
+	<div class="custom_html_section"></div>
+	
+	<script type="text/javascript" src="/js/frontend/theme.js"></script>
 
 </body>
 </html>
