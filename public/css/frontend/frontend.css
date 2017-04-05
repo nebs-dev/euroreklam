@@ -13153,8 +13153,8 @@ h6.block_heading{
 
 @font-face {
     font-family: 'encode_sans';
-    src: url('encodesans-black-webfont.woff2') format('woff2'),
-         url('encodesans-black-webfont.woff') format('woff');
+    src: url('fonts/encodesans-black-webfont.woff2') format('woff2'),
+         url('fonts/encodesans-black-webfont.woff') format('woff');
     font-weight: 900;
     font-style: normal;
 
@@ -13165,8 +13165,8 @@ h6.block_heading{
 
 @font-face {
     font-family: 'encode_sans';
-    src: url('encodesans-bold-webfont.woff2') format('woff2'),
-         url('encodesans-bold-webfont.woff') format('woff');
+    src: url('fonts/encodesans-bold-webfont.woff2') format('woff2'),
+         url('fonts/encodesans-bold-webfont.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 
@@ -13177,8 +13177,8 @@ h6.block_heading{
 
 @font-face {
     font-family: 'encode_sans';
-    src: url('encodesans-extrabold-webfont.woff2') format('woff2'),
-         url('encodesans-extrabold-webfont.woff') format('woff');
+    src: url('fonts/encodesans-extrabold-webfont.woff2') format('woff2'),
+         url('fonts/encodesans-extrabold-webfont.woff') format('woff');
     font-weight: 800;
     font-style: normal;
 
@@ -13189,8 +13189,8 @@ h6.block_heading{
 
 @font-face {
     font-family: 'encode_sans';
-    src: url('encodesans-extralight-webfont.woff2') format('woff2'),
-         url('encodesans-extralight-webfont.woff') format('woff');
+    src: url('fonts/encodesans-extralight-webfont.woff2') format('woff2'),
+         url('fonts/encodesans-extralight-webfont.woff') format('woff');
     font-weight: 200;
     font-style: normal;
 
@@ -13201,8 +13201,8 @@ h6.block_heading{
 
 @font-face {
     font-family: 'encode_sans';
-    src: url('encodesans-light-webfont.woff2') format('woff2'),
-         url('encodesans-light-webfont.woff') format('woff');
+    src: url('fonts/encodesans-light-webfont.woff2') format('woff2'),
+         url('fonts/encodesans-light-webfont.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 
@@ -13213,8 +13213,8 @@ h6.block_heading{
 
 @font-face {
     font-family: 'encode_sans';
-    src: url('encodesans-medium-webfont.woff2') format('woff2'),
-         url('encodesans-medium-webfont.woff') format('woff');
+    src: url('fonts/encodesans-medium-webfont.woff2') format('woff2'),
+         url('fonts/encodesans-medium-webfont.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 
@@ -13225,8 +13225,8 @@ h6.block_heading{
 
 @font-face {
     font-family: 'encode_sans';
-    src: url('encodesans-regular-webfont.woff2') format('woff2'),
-         url('encodesans-regular-webfont.woff') format('woff');
+    src: url('fonts/encodesans-regular-webfont.woff2') format('woff2'),
+         url('fonts/encodesans-regular-webfont.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 
@@ -13237,8 +13237,8 @@ h6.block_heading{
 
 @font-face {
     font-family: 'encode_sans';
-    src: url('encodesans-semibold-webfont.woff2') format('woff2'),
-         url('encodesans-semibold-webfont.woff') format('woff');
+    src: url('fonts/encodesans-semibold-webfont.woff2') format('woff2'),
+         url('fonts/encodesans-semibold-webfont.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 
@@ -13249,8 +13249,8 @@ h6.block_heading{
 
 @font-face {
     font-family: 'encode_sans';
-    src: url('encodesans-thin-webfont.woff2') format('woff2'),
-         url('encodesans-thin-webfont.woff') format('woff');
+    src: url('fonts/encodesans-thin-webfont.woff2') format('woff2'),
+         url('fonts/encodesans-thin-webfont.woff') format('woff');
     font-weight: 100;
     font-style: normal;
 
