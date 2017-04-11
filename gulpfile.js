@@ -35,13 +35,24 @@ elixir((mix) => {
         'frontend/theme/core.init.js',        
         'frontend/theme/theme.shortcodes.js',        
         'frontend/theme/swiper.js',  
-        'frontend/theme/isotope.min.js',          
-        'frontend/theme/global.js',
+        'frontend/theme/jquery.hoverdir.js',
+        'frontend/theme/isotope.min.js',                  
+        'frontend/theme/global.js',        
         'frontend/theme/rev_slider_1_1.js',
     ], './public/js/frontend/theme.js')
     
     .styles([
-        'frontend/*.css'
+        'frontend/stylesheet.css',
+        'frontend/fontello.css',
+        'frontend/style.css',
+        'frontend/global.min.css',
+        'frontend/core.animation.css',
+        'frontend/theme.shortcodes.min.css',
+        'frontend/responsive.min.css',
+        'frontend/core.portfolio.min.css',
+        'frontend/swiper.css',
+        'frontend/revslider-settings.css',
+        'frontend/settings.css',
     ], './public/css/frontend/frontend.css')
 
     // backend

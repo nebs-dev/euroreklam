@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     Route::get('/items/create', 'ItemsController@create')->name('admin_items_create');
     Route::post('/items', 'ItemsController@store')->name('admin_items_store');
     Route::get('/items/{item}/edit', 'ItemsController@edit')->name('admin_items_edit');
-    Route::put('/items/{item}', 'ItemsController@update')->name('admin_items_update');
+    Route::patch('/items/{item}', 'ItemsController@update')->name('admin_items_update');
     Route::delete('/items/{item}', 'ItemsController@destroy')->name('admin_items_destroy');
 
 });

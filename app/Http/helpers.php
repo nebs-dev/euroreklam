@@ -1,6 +1,37 @@
 <?php
 
 /**
+ * Return nav-here if current path begins with this path.
+ *
+ * @param string $path
+ * @return string
+ */
+function activeClass($path)
+{
+    return Request::is($path . '*') ? 'current-menu-item' :  '';
+}
+
+/**
+ * Truncate string
+ *
+ * @param $string
+ * @param $max_length
+ * @return string
+ */
+function string_truncate($string, $max_length)
+{
+    $string = trim($string);
+    
+    if(strlen($string) > $max_length) {
+        $string = wordwrap($string, $max_length);
+        $string = explode("\n", $string, 2);
+        $string = $string[0] . '...';
+    }
+
+    return $string;    
+}
+
+/**
  * @param null $title
  * @param null $message
  * @return \Illuminate\Foundation\Application|mixed

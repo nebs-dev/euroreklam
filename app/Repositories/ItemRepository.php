@@ -14,8 +14,15 @@ class ItemRepository {
     /**
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getAll() {
-        return Item::with('category')->paginate(10);
+    public function getAll(array $request) {
+        $query = Item::with('category');        
+        
+        if (isset($request['category'])) {
+            $query->join('categories', 'items.category_id', '=', 'categories.id')
+                    ->where('categories.title', ucfirst($request['category']));
+        }
+        
+        return $query->paginate(20);
     }
 
 

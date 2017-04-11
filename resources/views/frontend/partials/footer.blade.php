@@ -1,47 +1,4 @@
-<div class="pre_footer_wrap widget_area scheme_original">
-    <div class="pre_footer_wrap_inner">
-        <div class="content_wrap">
-            <div class="columns_wrap">
-                <div class="block_1472818066496">
-                    <div class="column">
-                        <div class="main-block">
-                            <div class="wrapper">
-                                <div class="columns_wrap sc_columns columns_nofluid sc_columns_count_2">
-                                    <div class="column-1_2 sc_column_item sc_column_item_1 odd first align-left">
 
-                                        <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-287" method="post" data-id="287" data-name="">
-                                            <div class="mc4wp-form-fields">
-                                                <p>
-                                                    <input type="email" name="EMAIL" placeholder="Newslatter Subscribe" required />
-                                                    <input type="submit" value="Sign Up" />
-                                                </p>
-                                                <div class="hidden"><input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></div><input type="hidden" name="_mc4wp_timestamp" value="1480072289" /><input type="hidden" name="_mc4wp_form_id" value="287" /><input type="hidden"
-                                                                name="_mc4wp_form_element_id" value="mc4wp-form-1" /></div>
-                                            <div class="mc4wp-response"></div>
-                                        </form>
-                                        <!-- / MailChimp for WordPress Plugin -->
-                                    </div>
-                                    <div class="column-1_2 sc_column_item sc_column_item_2 even align-right">
-                                        <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_small">
-                                            <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_facebook"><span class="icon-facebook"></span></a></div>
-                                            <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_gplus"><span class="icon-gplus"></span></a></div>
-                                            <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_twitter"><span class="icon-twitter"></span></a></div>
-                                            <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_youtube"><span class="icon-youtube"></span></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.columns_wrap -->
-        </div>
-        <!-- /.content_wrap -->
-    </div>
-    <!-- /.footer_wrap_inner -->
-</div>
 <!-- /.footer_wrap -->
 <footer class="footer_wrap widget_area scheme_dark">
     <div class="footer_wrap_inner widget_area_inner">
@@ -101,12 +58,3 @@
     <!-- /.footer_wrap_inner -->
 </footer>
 <!-- /.footer_wrap -->
-<div class="copyright_wrap copyright_style_text  scheme_dark">
-    <div class="copyright_wrap_inner">
-        <div class="content_wrap">
-            <div class="copyright_text">
-                <p><a href="#">ThemeREX</a> © 2016 All Rights Reserved</p>
-            </div>
-        </div>
-    </div>
-</div>

@@ -43,6 +43,23 @@ class Item extends Model {
         'seer',
         'scop'
     ];
+    
+    
+    public static function boot() {
+        parent::boot();
+
+        static::creating(function($model){
+            foreach ($model->attributes as $key => $value) {
+                $model->{$key} = empty($value) ? null : $value;
+            }
+        });
+        
+        static::updating(function($model){
+            foreach ($model->attributes as $key => $value) {
+                $model->{$key} = empty($value) ? null : $value;
+            }
+        });
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
