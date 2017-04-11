@@ -17,8 +17,12 @@
 	text-align: center;
 
 	a {
-		display: block;
+		display: block; 
 	}
+}
+
+.fa:before {
+	font-size: 24px;
 }
 
 .menu {
@@ -26,6 +30,7 @@
 	height: 100%;
 	position: relative;
 	clear: both; 
+
 
 	&-close {
 		color: $color-primary-dark;
@@ -38,7 +43,7 @@
    		text-align: center;
    		float:  right;
 	}
-
+ 
 	&-wrapper {
 		position: fixed;
 		width: 100%;
