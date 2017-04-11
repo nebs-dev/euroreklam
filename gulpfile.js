@@ -16,7 +16,35 @@ require('laravel-elixir-vue-2');
 elixir((mix) => {
     mix.sass('app.scss')
     .webpack('frontend/app.js', './public/js/frontend/frontend_app.js')
+    
+    // frontend
+    .scripts([
+        'frontend/theme/jquery.js',
+        'frontend/theme/jquery-migrate.min.js',
+        'frontend/theme/fontawesome.js',
+        'frontend/theme/lightbox.js',
+        'frontend/theme/jquery.themepunch.tools.min.js',
+        'frontend/theme/jquery.themepunch.revolution.min.js',
+        'frontend/theme/revolution.extension.video.min.js',
+        'frontend/theme/revolution.extension.slideanims.min.js',
+        'frontend/theme/revolution.extension.layeranimation.min.js',
+        'frontend/theme/revolution.extension.navigation.min.js',
+        'frontend/theme/revslider.min.js',        
+        'frontend/theme/superfish.js',        
+        'frontend/theme/core.utils.js',        
+        'frontend/theme/core.init.js',        
+        'frontend/theme/theme.shortcodes.js',        
+        'frontend/theme/swiper.js',  
+        'frontend/theme/isotope.min.js',          
+        'frontend/theme/global.js',
+        'frontend/theme/rev_slider_1_1.js',
+    ], './public/js/frontend/theme.js')
+    
+    .styles([
+        'frontend/*.css'
+    ], './public/css/frontend/frontend.css')
 
+    // backend
     .scripts([
         'backend/theme/jquery.min.js',
         'backend/theme/bootstrap.min.js',
