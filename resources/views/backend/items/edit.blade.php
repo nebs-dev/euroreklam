@@ -24,7 +24,7 @@
                               enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            <input type="hidden" name="_method" value="PUT"/>
+                            <input type="hidden" name="_method" value="PATCH"/>
 
                             @if (file_exists(public_path($item->slika)) && $item->slika != null)
                                 <img src="{{ asset($item->slika) }}" width="200">

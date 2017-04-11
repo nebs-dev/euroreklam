@@ -35,53 +35,9 @@
 			<div class="content_wrap clearfix">
 				<nav class="menu_main_nav_area menu_hover_fade">
 					<ul id="menu_main" class="menu_main_nav">
-						<li class="menu-item current-menu-item current-menu-ancestor current-menu-parent menu-item-has-children"><a href="index.html"><span>Home</span></a>
-							<ul class="sub-menu">
-								<li class="menu-item current-menu-item"><a href="index.html"><span>Home Default</span></a></li>
-								<li class="menu-item"><a href="home-boxed.html"><span>Home Boxed</span></a></li>
-							</ul>
-						</li>
-						<li class="menu-item menu-item-has-children"><a href="#"><span>Features</span></a>
-							<ul class="sub-menu">
-								<li class="menu-item"><a href="typography.html"><span>Typography</span></a></li>
-								<li class="menu-item"><a href="shortcodes.html"><span>Shortcodes</span></a></li>
-								<li class="menu-item"><a href="appointments.html"><span>Appointments</span></a></li>
-								<li class="menu-item menu-item-has-children"><a href="#"><span>Help</span></a>
-									<ul class="sub-menu">
-										<li class="menu-item"><a href="support.html"><span>Support</span></a></li>
-										<li class="menu-item"><a href="customization.html"><span>Customization</span></a></li>
-										<li class="menu-item"><a href="video-tutorials.html"><span>Video Tutorials</span></a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item"><a href="our-services.html"><span>Services</span></a></li>
-						<li class="menu-item menu-item-has-children"><a href="#"><span>About</span></a>
-							<ul class="sub-menu">
-								<li class="menu-item"><a href="about-us-style-1.html"><span>Style 1</span></a></li>
-								<li class="menu-item"><a href="about-us-style-2.html"><span>Style 2</span></a></li>
-							</ul>
-						</li>
-						<li class="menu-item"><a href="our-team.html"><span>Our Team</span></a></li>
-						<li class="menu-item menu-item-has-children"><a href="all-posts.html"><span>News</span></a>
-							<ul class="sub-menu">
-								<li class="menu-item"><a href="all-posts.html"><span>Classic With Sidebar</span></a></li>
-								<li class="menu-item"><a href="classic-blog-without-sidebar.html"><span>Classic Without Sidebar</span></a></li>
-								<li class="menu-item menu-item-has-children"><a href="#"><span>Masonry Layouts</span></a>
-									<ul class="sub-menu">
-										<li class="menu-item"><a href="masonry-2-columns.html"><span>2 columns</span></a></li>
-										<li class="menu-item"><a href="masonry-3-columns.html"><span>3 columns</span></a></li>
-									</ul>
-								</li>
-								<li class="menu-item menu-item-has-children"><a href="#"><span>Portfolio Layouts</span></a>
-									<ul class="sub-menu">
-										<li class="menu-item"><a href="portfolio-2-columns.html"><span>2 columns</span></a></li>
-										<li class="menu-item"><a href="portfolio-3-columns.html"><span>3 columns</span></a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item"><a href="contacts.html"><span>Contacts</span></a></li>
+						<li class="menu-item {{ activeClass('/') }}"><a href="/"><span>Pocetna</span></a></li>						
+						<li class="menu-item {{ activeClass('klime') }}"><a href="/klime"><span>Klime</span></a></li>						
+						<li class="menu-item {{ activeClass('kontakt') }}"><a href="/kontakt"><span>Kontakt</span></a></li>
 					</ul>
 				</nav>
 				<a href="appointments.html" class="make_appoinment_button sc_button sc_button_square sc_button_style_filled sc_button_size_small sc_button_style_color_style2">Make an Appoinment</a>

@@ -76,8 +76,8 @@ class ItemsController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(ItemRequest $request, Item $item) {
-        $params = array_filter($request->all(), 'strlen');
-        $item->update($params);
+        // $params = array_filter($request->all(), 'strlen');        
+        $item->update($request->all());                
 
         $item = FileUploader::upload($request, $item, 'klime', 'slika');
 
