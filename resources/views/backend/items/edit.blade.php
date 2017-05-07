@@ -27,9 +27,7 @@
                             <input type="hidden" name="_method" value="PATCH"/>
 
                             @if (file_exists(public_path($item->slika)) && $item->slika != null)
-                                <img src="{{ asset($item->slika) }}" width="200">
-                            @else
-                                <img src="{{ asset('images/visa.png') }}" width="100">
+                                <img src="{{ asset($item->slika) }}" width="200">                            
                             @endif
 
                             <div class="form-group">
@@ -74,6 +72,8 @@
                             <div class="form-group required">
                                 <label class="control-label">Energetska klasa</label>
                                 <select id="en_klasa" name="en_klasa" class="form-control">
+                                    <option {{ ($item->en_klasa == 'A++/A+++' ? "selected":"") }} value="A++/A+++">A++/A+++</option>
+                                    <option {{ ($item->en_klasa == 'A++/A+' ? "selected":"") }} value="A++/A+">A++/A+</option>
                                     <option {{ ($item->en_klasa == 'A+++' ? "selected":"") }} value="A+++">A+++</option>
                                     <option {{ ($item->en_klasa == 'A++' ? "selected":"") }} value="A++">A++</option>
                                     <option {{ ($item->en_klasa == 'A+' ? "selected":"") }} value="A+">A+</option>
@@ -118,26 +118,6 @@
                                        class="form-control"
                                        placeholder="Prikljucak elekstricne energije grijanje"
                                        value="{{ $item->prikljucak_el_energije_grijanje }}">
-                            </div>
-
-                            <div class="form-group required">
-                                <label class="control-label">EER (W)</label>
-                                <input id="eer" name="eer" class="form-control"
-                                       placeholder="EER" value="{{ $item->eer }}">
-                            </div>
-
-                            <div class="form-group required">
-                                <label class="control-label">COP (W)</label>
-                                <input id="cop" name="cop" class="form-control"
-                                       placeholder="COP" value="{{ $item->cop }}">
-                            </div>
-
-                            <div class="form-group required">
-                                <label class="control-label">Odvlazivanje</label>
-                                <select id="odvlazivanje" name="odvlazivanje" class="form-control">
-                                    <option {{ ($item->odvlazivanje == 'da' ? "selected":"") }} value="da">Da</option>
-                                    <option {{ ($item->odvlazivanje == 'ne' ? "selected":"") }} value="ne">Ne</option>
-                                </select>
                             </div>
 
                             <div class="form-group required">
@@ -232,6 +212,12 @@
                                 <input id="raspolozivi_pad_tlaka" name="raspolozivi_pad_tlaka" class="form-control"
                                        placeholder="Raspolozivi pad tlaka" value="{{ $item->raspolozivi_pad_tlaka }}">
                             </div>
+                            
+                            <div class="form-group">
+                                <label>Područje rada hl./gr°C (Min~Max)</label>
+                                <input id="podrucje_rada" name="podrucje_rada" class="form-control"
+                                       placeholder="Područje rada hl./gr°C (Min~Max)" value="{{ $item->podrucje_rada }}">
+                            </div>
 
                             <div class="form-group required">
                                 <label class="control-label">Jamstvo</label>
@@ -244,6 +230,30 @@
                                     <option {{ ($item->jamstvo == 6 ? "selected":"") }} value="6">6 godina</option>
                                     <option {{ ($item->jamstvo == 7 ? "selected":"") }} value="7">7 godina</option>
                                 </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Razina zvučne snage u.j. (dB(A))</label>
+                                <input id="razina_zvucne_snage_u_j" name="razina_zvucne_snage_u_j" class="form-control"
+                                       placeholder="Razina zvučne snage u.j. (dB(A))" value="{{ $item->razina_zvucne_snage_u_j }}">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Razina zvučnog tlaka u.j. (dB(A))</label>
+                                <input id="razina_zvucnog_tlaka_u_j" name="razina_zvucnog_tlaka_u_j" class="form-control"
+                                       placeholder="Razina zvučnog tlaka u.j. (dB(A))" value="{{ $item->razina_zvucnog_tlaka_u_j }}">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Razina zvučne snage v.j. (dB(A))</label>
+                                <input id="razina_zvucne_snage_v_j" name="razina_zvucne_snage_v_j" class="form-control"
+                                       placeholder="Razina zvučne snage v.j. (dB(A))" value="{{ $item->razina_zvucne_snage_v_j }}">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Razina zvučnog tlaka v.j. (dB(A))</label>
+                                <input id="razina_zvucnog_tlaka_v_j" name="razina_zvucnog_tlaka_v_j" class="form-control"
+                                       placeholder="Razina zvučnog tlaka v.j. (dB(A))" value="{{ $item->razina_zvucnog_tlaka_v_j }}">
                             </div>
 
                             <div class="form-group">
@@ -259,7 +269,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </form>
 

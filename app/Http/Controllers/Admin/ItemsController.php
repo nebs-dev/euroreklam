@@ -41,7 +41,8 @@ class ItemsController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(ItemRequest $request) {
-        try {
+        try {                        
+            
             $input = array_filter($request->all(), 'strlen');
             $item  = new Item($input);
             $item->save();
@@ -75,7 +76,7 @@ class ItemsController extends Controller {
      * @param Item $item
      * @return \Illuminate\Http\Response
      */
-    public function update(ItemRequest $request, Item $item) {
+    public function update(ItemRequest $request, Item $item) {                
         // $params = array_filter($request->all(), 'strlen');        
         $item->update($request->all());                
 
