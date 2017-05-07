@@ -20,10 +20,15 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
 
-                        <form method="POST" action="{{ route('admin_items_store') }}">
+                        <form method="POST" action="{{ route('admin_items_store') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <input type="hidden" name="_method" value="POST"/>
+                            
+                            <div class="form-group">
+                                <label>Slika</label>
+                                <input type="file" id="slika" name="slika" class="form-control">
+                            </div>
 
                             <div class="form-group required">
                                 <label class="control-label">Naziv</label>
@@ -61,6 +66,8 @@
                             <div class="form-group required">
                                 <label class="control-label">Energetska klasa</label>
                                 <select id="en_klasa" name="en_klasa" class="form-control">
+                                    <option {{ (old("en_klasa") == 'A++/A+++' ? "selected":"") }} value="A++/A+++">A++/A+++</option>
+                                    <option {{ (old("en_klasa") == 'A++/A+' ? "selected":"") }} value="A++/A+">A++/A+</option>
                                     <option {{ (old("en_klasa") == 'A+++' ? "selected":"") }} value="A+++">A+++</option>
                                     <option {{ (old("en_klasa") == 'A++' ? "selected":"") }} value="A++">A++</option>
                                     <option {{ (old("en_klasa") == 'A+' ? "selected":"") }} value="A+">A+</option>
@@ -103,27 +110,7 @@
                                 <input id="prikljucak_el_energije_grijanje" name="prikljucak_el_energije_grijanje"
                                        class="form-control"
                                        placeholder="Prikljucak elekstricne energije grijanje" value="{{ old('prikljucak_el_energije_grijanje') }}">
-                            </div>
-
-                            <div class="form-group required">
-                                <label class="control-label">EER (W)</label>
-                                <input id="eer" name="eer" class="form-control"
-                                       placeholder="EER" value="{{ old('eer') }}">
-                            </div>
-
-                            <div class="form-group required">
-                                <label class="control-label">COP (W)</label>
-                                <input id="cop" name="cop" class="form-control"
-                                       placeholder="COP" value="{{ old('cop') }}">
-                            </div>
-
-                            <div class="form-group required">
-                                <label class="control-label">Odvlazivanje</label>
-                                <select id="odvlazivanje" name="odvlazivanje" class="form-control">
-                                    <option {{ (old("odvlazivanje") == 'da' ? "selected":"") }} value="da">Da</option>
-                                    <option {{ (old("odvlazivanje") == 'ne' ? "selected":"") }} value="ne">Ne</option>
-                                </select>
-                            </div>
+                            </div>                                                        
 
                             <div class="form-group required">
                                 <label class="control-label">Napajanje (ph-V-Hz)</label>
@@ -209,6 +196,12 @@
                                 <input id="raspolozivi_pad_tlaka" name="raspolozivi_pad_tlaka" class="form-control"
                                        placeholder="Raspolozivi pad tlaka" value="{{ old('raspolozivi_pad_tlaka') }}">
                             </div>
+                            
+                            <div class="form-group">
+                                <label>Područje rada hl./gr°C (Min~Max)</label>
+                                <input id="podrucje_rada" name="podrucje_rada" class="form-control"
+                                       placeholder="Područje rada hl./gr°C (Min~Max)" value="{{ old('podrucje_rada') }}">
+                            </div>
 
                             <div class="form-group required">
                                 <label class="control-label">Jamstvo</label>
@@ -221,6 +214,30 @@
                                     <option {{ (old("jamstvo") == 6 ? "selected":"") }} value="6">6 godina</option>
                                     <option {{ (old("jamstvo") == 7 ? "selected":"") }} value="7">7 godina</option>
                                 </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Razina zvučne snage u.j. (dB(A))</label>
+                                <input id="razina_zvucne_snage_u_j" name="razina_zvucne_snage_u_j" class="form-control"
+                                       placeholder="Razina zvučne snage u.j. (dB(A))" value="{{ old('razina_zvucne_snage_u_j') }}">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Razina zvučnog tlaka u.j. (dB(A))</label>
+                                <input id="razina_zvucnog_tlaka_u_j" name="razina_zvucnog_tlaka_u_j" class="form-control"
+                                       placeholder="Razina zvučnog tlaka u.j. (dB(A))" value="{{ old('razina_zvucnog_tlaka_u_j') }}">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Razina zvučne snage v.j. (dB(A))</label>
+                                <input id="razina_zvucne_snage_v_j" name="razina_zvucne_snage_v_j" class="form-control"
+                                       placeholder="Razina zvučne snage v.j. (dB(A))" value="{{ old('razina_zvucne_snage_v_j') }}">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Razina zvučnog tlaka v.j. (dB(A))</label>
+                                <input id="razina_zvucnog_tlaka_v_j" name="razina_zvucnog_tlaka_v_j" class="form-control"
+                                       placeholder="Razina zvučnog tlaka v.j. (dB(A))" value="{{ old('razina_zvucnog_tlaka_v_j') }}">
                             </div>
 
                             <div class="form-group">

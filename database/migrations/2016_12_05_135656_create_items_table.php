@@ -20,18 +20,15 @@ class CreateItemsTable extends Migration {
 
             $table->string('naziv')->unique();
             $table->string('slika')->nullable();
-            $table->double('cijena_pdv', 16, 6);
-            $table->double('cijena_popust', 16, 6)->nullable();
+            $table->string('cijena_pdv');
+            $table->string('cijena_popust')->nullable();
             $table->text('opis');
             $table->string('en_klasa');
             $table->string('kapacitet_hladjenja');
             $table->string('kapacitet_grijanja')->nullable();
             $table->string('rashladno_sredstvo')->nullable();
             $table->string('prikljucak_el_energije_hladjenje');
-            $table->string('prikljucak_el_energije_grijanje')->nullable();
-            $table->string('eer')->nullable();
-            $table->string('cop')->nullable();
-            $table->string('odvlazivanje');
+            $table->string('prikljucak_el_energije_grijanje')->nullable();            
             $table->string('napajanje');
             $table->string('buka_un_jedinice');
             $table->string('buka_vanj_jedinice');
@@ -46,9 +43,14 @@ class CreateItemsTable extends Migration {
             $table->string('protok_zraka_unutarnja')->nullable();
             $table->string('protok_zraka_vanjska')->nullable();
             $table->string('raspolozivi_pad_tlaka')->nullable();
+            $table->string('podrucje_rada')->nullable();
+            $table->string('razina_zvucne_snage_u_j')->nullable();
+            $table->string('razina_zvucnog_tlaka_u_j')->nullable();
+            $table->string('razina_zvucne_snage_v_j')->nullable();
+            $table->string('razina_zvucnog_tlaka_v_j')->nullable();
             $table->integer('jamstvo');
-            $table->double('seer', 16, 6)->nullable();
-            $table->double('scop', 16, 6)->nullable();
+            $table->string('seer')->nullable();
+            $table->string('scop')->nullable();
             $table->timestamps();
         });
     }

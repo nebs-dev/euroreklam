@@ -22,18 +22,14 @@ class ItemRequest extends FormRequest {
      */
     public function rules() {
         $rules = [
-//            'naziv' => 'required|unique:items',
             'category_id' => 'required|exists:categories,id',
             'opis' => 'required',
-            'cijena_pdv' => 'required|numeric',
+            'cijena_pdv' => 'required',
             'cijena_popust' => 'numeric|nullable',
             'en_klasa' => 'required',
             'kapacitet_hladjenja' => 'required',
             'kapacitet_grijanja' => 'nullable',
-            'prikljucak_el_energije_hladjenje' => 'required',
-            'eer' => 'required',
-            'cop' => 'required',
-            'odvlazivanje' => 'required',
+            'prikljucak_el_energije_hladjenje' => 'required',            
             'napajanje' => 'required',
             'buka_un_jedinice' => 'required',
             'buka_vanj_jedinice' => 'required',
@@ -43,9 +39,7 @@ class ItemRequest extends FormRequest {
             'promjer_cijevi_tekuca' => 'required',
             'promjer_cijevi_plinska' => 'required',
             'max_duljina_cjevovoda' => 'integer',
-            'max_visinska_razlika' => 'integer',
-            'seer' => 'numeric',
-            'scop' => 'numeric',
+            'max_visinska_razlika' => 'integer',            
             'jamstvo' => 'required|integer',
         ];
 
