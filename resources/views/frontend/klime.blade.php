@@ -5,7 +5,7 @@
     <div class="top_panel_title top_panel_style_1  title_present breadcrumbs_present scheme_original">
 		<div class="top_panel_title_inner top_panel_inner_style_1  title_present_inner breadcrumbs_present_inner">
 			<div class="content_wrap">
-				<h1 class="page_title">Klime</h1>                
+				<h1 class="page_title">Klime {{ app('request')->input('category') ? '-' : '' }} <small>{{ app('request')->input('category') }}</small></h1>                
 				<div class="breadcrumbs"><a class="breadcrumbs_item home" href="/">Pocetna</a><span class="breadcrumbs_delimiter"></span><span class="breadcrumbs_item current">Klime</span></div>
 			</div>
 		</div>
@@ -18,38 +18,57 @@
 					<div class="post_content" itemprop="articleBody">
 						<div class="full-width">
 							<div class="column">                                
-								<div class="main-block">                                    
-									<div class="wrapper">
-                                                                                
-                                        <div class="column-1_2 sc_column_item sc_column_item_2 even align-right">
-											<div class="sc_socials sc_socials_type_icons sc_socials_shape_square">
-												<div class="sc_socials_item">
-                                                    <a href="?category=midea" class="social_icons">
-                                                        <img src="images/MideaLogoFooter.png" />
-                                                    </a>
-                                                </div>
-                                                <div class="sc_socials_item">
-                                                    <a href="?category=samsung" class="social_icons">
-                                                        <img src="images/SamsungLogoFooter.png" />
-                                                    </a>
-                                                </div>
-                                                <div class="sc_socials_item">
-                                                    <a href="?category=toshiba" class="social_icons">
-                                                        <img src="images/ToshibaLogoFooter.png" />
-                                                    </a>
-                                                </div>
-                                                <div class="sc_socials_item">
-                                                    <a href="?category=lg" class="social_icons">
-                                                        <img src="images/LGLogoFooter.png" />
-                                                    </a>
-                                                </div>
-                                                <div class="sc_socials_item">
-                                                    <a href="?category=korel" class="social_icons">
-                                                        <img src="images/KorelLogoFooter.png" />
-                                                    </a>
-                                                </div>
+								<div class="main-block"> 
+                                    <div class="wrapper">
+										<div class="sc_content content_wrap">
+											<div class="h055"></div>
+											<div id="sc_services_1306377838_wrap" class="sc_services_wrap">
+												<div id="sc_services_1306377838" class="sc_services sc_services_style_services-1 sc_services_type_icons  margin_top_medium margin_bottom_tiny">
+													<div class="sc_columns columns_wrap">
+														<div class="column-1_5 column_padding_bottom">
+															<div id="sc_services_1306377838_1" class="sc_services_item sc_services_item_1 odd first">
+																<a href="?category=midea">
+                                                                    <img src="images/klime_logo/midea.png" />
+                                                                </a>																		
+															</div>
+														</div>
+                                                        <div class="column-1_5 column_padding_bottom">
+															<div id="sc_services_1306377838_1" class="sc_services_item sc_services_item_1 odd first">
+																<a href="?category=samsung">
+                                                                    <img src="images/klime_logo/samsung.png" />
+                                                                </a>																		
+															</div>
+														</div>
+                                                        <div class="column-1_5 column_padding_bottom">
+															<div id="sc_services_1306377838_1" class="sc_services_item sc_services_item_1 odd first">
+																<a href="?category=toshiba">
+                                                                    <img src="images/klime_logo/toshiba.png" />
+                                                                </a>																		
+															</div>
+														</div>
+                                                        <div class="column-1_5 column_padding_bottom">
+															<div id="sc_services_1306377838_1" class="sc_services_item sc_services_item_1 odd first">
+																<a href="?category=lg">
+                                                                    <img src="images/klime_logo/lg.png" />
+                                                                </a>																		
+															</div>
+														</div>
+                                                        <div class="column-1_5 column_padding_bottom">
+															<div id="sc_services_1306377838_1" class="sc_services_item sc_services_item_1 odd first">
+																<a href="?category=korel">
+                                                                    <img src="images/klime_logo/korel.jpg" />
+                                                                </a>																		
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- /.sc_services -->
 											</div>
+											<!-- /.sc_services_wrap -->
 										</div>
+									</div>
+                                                                       
+									<div class="wrapper">
                                         
 										<div id="sc_blogger_257919144" class="sc_blogger layout_portfolio_3 template_portfolio  sc_blogger_horizontal">                                                                                                        
 											<div class="isotope_wrap" data-columns="3">
@@ -60,43 +79,42 @@
 
 															<div class="post_content isotope_item_content ih-item colored square effect_dir left_to_right">
 																<div class="post_featured img ">
-																	<a href="post.html"><img width="370" height="246" alt="Costs Related to Service Callouts and Repairs During the Contract" src="{{ asset($item->slika) }}"></a>
+																	<a href="/klime/{{ $item->id }}">
+                                                                        <img width="370" height="246" alt="Costs Related to Service Callouts and Repairs During the Contract" src="{{ asset($item->slika) }}">
+                                                                    </a>
 																</div>
+                                                                
+                                                                <div class="post_content isotope_item_content">
 
-																<div class="post_info_wrap info">
-																	<div class="info-back">
+            														<h5 class="post_title"><a href="/klime/{{ $item->id }}">{{ $item->naziv }}</a></h5>
+            														<div class="post_info">
+            															<span class="post_info_item post_info_posted icon-clock-empty"> 
+                                                                            <a href="javascript:void(0)" class="post_info_date">
+                                                                                @if($item->cijena_popust)
+                                                                                    <strike>{{ $item->cijena_pdv }} kn</strike>
+                                                                                @else
+                                                                                    {{ $item->cijena_pdv }} kn
+                                                                                @endif                                                                                                        
+                                                                            </a>
+                                                                            <a href="javascript:void(0)" class="post_info_date">
+                                                                                {{ $item->cijena_popust }} {{ $item->cijena_popust ? 'kn' : '' }}
+                                                                            </a>
+                                                                        </span>
+            															<span class="post_info_item post_info_counters">	
+                                                                            <a class="post_counters_item post_counters_views icon-eye" href="javascript:void(0)">
+                                                                                {{ $item->category->title }}
+                                                                            </a>
+            															</span>
+            														</div>
+            														<div class="post_descr">
+            															<p>
+                                                                            {{ string_truncate($item->opis, 150) }}
+                                                                        </p>
+                                                                        <a href="/klime/{{ $item->id }}" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small sc_button_style_color_style2">Vise</a> 
+                                                                    </div>
 
-																		<h4 class="post_title"><a href="post.html">{{ $item->naziv }}</a></h4>
-
-																		<div class="post_descr">
-																			<p class="post_info">
-																				<span class="post_info_item post_info_posted icon-clock-empty"> 
-                                                                                    <a href="post.html" class="post_info_date">
-                                                                                        @if($item->cijena_popust)
-                                                                                            <strike>{{ $item->cijena_pdv }} kn</strike>
-                                                                                        @else
-                                                                                            {{ $item->cijena_pdv }} kn
-                                                                                        @endif                                                                                                        
-                                                                                    </a>
-                                                                                    <a href="post.html" class="post_info_date">
-                                                                                        {{ $item->cijena_popust }} kn
-                                                                                    </a>
-                                                                                </span>
-                                                                                </span>
-																				<span class="post_info_item post_info_counters">	
-                                                                                    <a class="post_counters_item post_counters_views icon-eye" href="post.html">
-                                                                                        {{ $item->category->title }}
-                                                                                    </a>
-																				</span>
-																			</p>
-																			<p>
-                                                                                <a href="post.html">{{ string_truncate($item->opis, 150) }}</a>
-                                                                            </p>
-																			<p class="post_buttons"></p>
-																		</div>
-																	</div>
-																</div>
-																<!-- /.info-back /.info -->
+            													</div>
+                                                                
 															</div>
 															<!-- /.post_content -->
 														</div>

@@ -13,6 +13,7 @@ Route::post('login', 'Auth\LoginController@login');
 # Frontend
 Route::get('/', 'FrontendController@index')->name('home');
 Route::get('/klime', 'FrontendController@klime')->name('klime');
+Route::get('/klime/{item}', 'FrontendController@klima')->name('klima');
 Route::get('/kontakt', 'FrontendController@kontakt')->name('kontakt');
 Route::get('/o_nama', 'FrontendController@o_nama')->name('o_nama');
 

@@ -184,7 +184,7 @@
                                                                     <div id="sc_services_1715964234_1" class="sc_services_item sc_services_item_1 odd first">
                                                                         <div class="sc_services_item_featured post_featured">
                                                                             <div class="post_thumb" data-image="images/image-9.jpg" data-title="Heating and Water">
-                                                                                <a class="hover_icon hover_icon_link" href="post.html">
+                                                                                <a class="hover_icon hover_icon_link" href="/klime/{{ $item->id }}">
                                                                                     <img width="370" height="209" alt="Heating and Water" src="{{ asset($item->slika) }}">
                                                                                 </a>
                                                                             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\ItemRepository;
+use App\Item;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller {
@@ -34,6 +35,11 @@ class FrontendController extends Controller {
         $items = $this->itemRepo->getAll($request->all());
 
         return view('frontend/klime', compact('items'));
+    }
+    
+    
+    public function klima(Item $item) {
+        return view('frontend/klima', compact('item'));
     }
 
     public function kontakt() {
