@@ -219,61 +219,61 @@
                             </div>
                         </div>
 
-                        <div class="block_1473835864949 scheme_dark">
-                            <div class="column">
-                                <div class="main-block">
-                                    <div class="wrapper">
-                                        <div class="columns_wrap sc_columns columns_nofluid sc_columns_count_2 margin_top_medium margin_bottom_medium">
-                                            <div class="column-1_2 sc_column_item sc_column_item_1 odd first"></div>
-                                            <div class="column-1_2 sc_column_item sc_column_item_2 even">
-                                                <div class="sc_section sc_section_block  aligncenter">
-                                                    <div class="sc_section_inner">
-                                                        <div class="sc_section_content_wrap">
-                                                            <h1 class="block_heading block_1473688385971">Request a Quote</h1>
-                                                            <div class="sc_section aligncenter column-9_10">
-                                                                <div class="sc_section_inner">
-                                                                    <div class="sc_section_content_wrap">
-                                                                        <h6 class="block_heading block_1477923107486">We are what you need! Our professional team will make sure you get the highest level of help.</h6></div>
-                                                                </div>
-                                                            </div>
-                                                            <div role="form" class="wpcf7" lang="en-US" dir="ltr">
-                                                                <div class="screen-reader-response"></div>
-                                                                <form action="#" method="" novalidate="novalidate">
-                                                                    <div class="hidden">
-                                                                        <input type="hidden" name="_wpcf7" value="394" />
-                                                                        <input type="hidden" name="_wpcf7_version" value="4.5.1" />
-                                                                        <input type="hidden" name="_wpcf7_locale" value="en_US" />
-                                                                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f394-p8-o1" />
-                                                                        <input type="hidden" name="_wpnonce" value="4a96b0c389" />
-                                                                    </div>
-                                                                    <p>
-                                                                        <span class="wpcf7-form-control-wrap first-name"><input type="text" name="first-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required first_name" aria-required="true" aria-invalid="false" placeholder="First Name" /></span>
-                                                                        <span class="wpcf7-form-control-wrap last-name"><input type="text" name="last-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required last_name" aria-required="true" aria-invalid="false" placeholder="Last Name" /></span><br/>
-                                                                        <span class="wpcf7-form-control-wrap address"><input type="text" name="address" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required address" aria-required="true" aria-invalid="false" placeholder="Address" /></span>
-                                                                        <span	class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email your_email" aria-required="true" aria-invalid="false" placeholder="Your Email" /></span><br />
-                                                                        <span class="wpcf7-form-control-wrap menu-377">
-                                                                            <select name="menu-377" class="wpcf7-form-control wpcf7-select select_menu" aria-invalid="false">
-                                                                                <option value="Interested in...">Interested in...</option>
-                                                                                <option value="Lorem ipsum dolor sit amet">Lorem ipsum dolor sit amet</option>
-                                                                                <option value="Consectetursicing elit, sed do eiusmod tempor">Consectetursicing elit, sed do eiusmod tempor</option>
-                                                                                <option value="Ut enim ad minim veniam, quis">Ut enim ad minim veniam, quis</option>
-                                                                                <option value="Nostrud exercitation ullamco laboriut aliquip">Nostrud exercitation ullamco laboriut aliquip</option>
-                                                                                <option value="Lorem ipsum dolor sit amet, consectetur ang elit">Lorem ipsum dolor sit amet, consectetur ang elit</option>
-                                                                            </select>
-                                                                        </span><br/>
-                                                                        <input type="submit" value="Submit Request" class="wpcf7-form-control wpcf7-submit" /></p>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="h135"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{--<div class="block_1473835864949 scheme_dark">--}}
+                            {{--<div class="column">--}}
+                                {{--<div class="main-block">--}}
+                                    {{--<div class="wrapper">--}}
+                                        {{--<div class="columns_wrap sc_columns columns_nofluid sc_columns_count_2 margin_top_medium margin_bottom_medium">--}}
+                                            {{--<div class="column-1_2 sc_column_item sc_column_item_1 odd first"></div>--}}
+                                            {{--<div class="column-1_2 sc_column_item sc_column_item_2 even">--}}
+                                                {{--<div class="sc_section sc_section_block  aligncenter">--}}
+                                                    {{--<div class="sc_section_inner">--}}
+                                                        {{--<div class="sc_section_content_wrap">--}}
+                                                            {{--<h1 class="block_heading block_1473688385971">Request a Quote</h1>--}}
+                                                            {{--<div class="sc_section aligncenter column-9_10">--}}
+                                                                {{--<div class="sc_section_inner">--}}
+                                                                    {{--<div class="sc_section_content_wrap">--}}
+                                                                        {{--<h6 class="block_heading block_1477923107486">We are what you need! Our professional team will make sure you get the highest level of help.</h6></div>--}}
+                                                                {{--</div>--}}
+                                                            {{--</div>--}}
+                                                            {{--<div role="form" class="wpcf7" lang="en-US" dir="ltr">--}}
+                                                                {{--<div class="screen-reader-response"></div>--}}
+                                                                {{--<form action="#" method="" novalidate="novalidate">--}}
+                                                                    {{--<div class="hidden">--}}
+                                                                        {{--<input type="hidden" name="_wpcf7" value="394" />--}}
+                                                                        {{--<input type="hidden" name="_wpcf7_version" value="4.5.1" />--}}
+                                                                        {{--<input type="hidden" name="_wpcf7_locale" value="en_US" />--}}
+                                                                        {{--<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f394-p8-o1" />--}}
+                                                                        {{--<input type="hidden" name="_wpnonce" value="4a96b0c389" />--}}
+                                                                    {{--</div>--}}
+                                                                    {{--<p>--}}
+                                                                        {{--<span class="wpcf7-form-control-wrap first-name"><input type="text" name="first-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required first_name" aria-required="true" aria-invalid="false" placeholder="First Name" /></span>--}}
+                                                                        {{--<span class="wpcf7-form-control-wrap last-name"><input type="text" name="last-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required last_name" aria-required="true" aria-invalid="false" placeholder="Last Name" /></span><br/>--}}
+                                                                        {{--<span class="wpcf7-form-control-wrap address"><input type="text" name="address" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required address" aria-required="true" aria-invalid="false" placeholder="Address" /></span>--}}
+                                                                        {{--<span	class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email your_email" aria-required="true" aria-invalid="false" placeholder="Your Email" /></span><br />--}}
+                                                                        {{--<span class="wpcf7-form-control-wrap menu-377">--}}
+                                                                            {{--<select name="menu-377" class="wpcf7-form-control wpcf7-select select_menu" aria-invalid="false">--}}
+                                                                                {{--<option value="Interested in...">Interested in...</option>--}}
+                                                                                {{--<option value="Lorem ipsum dolor sit amet">Lorem ipsum dolor sit amet</option>--}}
+                                                                                {{--<option value="Consectetursicing elit, sed do eiusmod tempor">Consectetursicing elit, sed do eiusmod tempor</option>--}}
+                                                                                {{--<option value="Ut enim ad minim veniam, quis">Ut enim ad minim veniam, quis</option>--}}
+                                                                                {{--<option value="Nostrud exercitation ullamco laboriut aliquip">Nostrud exercitation ullamco laboriut aliquip</option>--}}
+                                                                                {{--<option value="Lorem ipsum dolor sit amet, consectetur ang elit">Lorem ipsum dolor sit amet, consectetur ang elit</option>--}}
+                                                                            {{--</select>--}}
+                                                                        {{--</span><br/>--}}
+                                                                        {{--<input type="submit" value="Submit Request" class="wpcf7-form-control wpcf7-submit" /></p>--}}
+                                                                {{--</form>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="h135"></div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                         <div class="full-width">
                             <div class="column">
