@@ -90,7 +90,7 @@
 
                         <!-- LAYER NR. 4 -->
                         <div class="tp-caption slider_button   tp-resizeme" id="slide-3-layer-4" data-x="35" data-y="382" data-width="['275']" data-height="['45']" data-transform_idle="o:1;" data-transform_in="y:-50px;opacity:0;s:2000;e:Power2.easeInOut;" data-transform_out="opacity:0;s:300;"
-                                        data-start="2000" data-splitin="none" data-splitout="none" data-responsive_offset="on" data-captionhidden="on"><a class="sc_button sc_button_square sc_button_style_filled sc_button_size_small slider_button" href="about-us-style-1.html">More About Company</a> </div>
+                                        data-start="2000" data-splitin="none" data-splitout="none" data-responsive_offset="on" data-captionhidden="on"><a class="sc_button sc_button_square sc_button_style_filled sc_button_size_small slider_button" href="about-us-style-1.html">More Abou Company</a> </div>
                     </li>
                 </ul>
                 <div class="tp-bannertimer tp-bottom"></div>
@@ -333,7 +333,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="sc_services_button sc_item_button"><a href="our-services.html" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small sc_button_style_color_style2">More About Services</a></div>
+
                                             </div>
                                             <!-- /.sc_services -->
                                         </div>

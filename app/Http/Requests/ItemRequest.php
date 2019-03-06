@@ -25,7 +25,7 @@ class ItemRequest extends FormRequest {
             'category_id' => 'required|exists:categories,id',
             'opis' => 'required',
             'cijena_pdv' => 'required',
-            'cijena_popust' => 'numeric|nullable',
+            'cijena_popust' => 'nullable',
             'en_klasa' => 'required',
             'kapacitet_hladjenja' => 'required',
             'kapacitet_grijanja' => 'nullable',
